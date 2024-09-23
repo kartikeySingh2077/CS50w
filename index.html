@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Vincent van Gogh !</h1>
+            <button id="headerButton">Vincent van Gogh decided to become an artist at the age of 27. That decision would change his life and art history forever. </button>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Who painted the 'Starry Night' ?</h2>
+                <hr>
+
+                <!-- Updated buttons with unique IDs -->
+                <button id="button1">Paul Gauguin</button>
+                <button id="button2">Emile Bernard</button>
+                <button id="button3">Vincent van Gogh</button> <!-- Correct answer -->
+                <button id="button4">Emile Schuffenecker</button>
+
+                <!-- JavaScript to handle button clicks -->
+                <script>
+                    document.getElementById("button1").addEventListener("click", function() {
+                        alert("Wrong Answer! Paul Gauguin did not paint 'Starry Night'.");
+                    });
+
+                    document.getElementById("button2").addEventListener("click", function() {
+                        alert("Wrong Answer! Emile Bernard did not paint 'Starry Night'.");
+                    });
+
+                    document.getElementById("button3").addEventListener("click", function() {
+                        alert("BINGO! Vincent van Gogh painted 'Starry Night'.");
+                    });
+
+                    document.getElementById("button4").addEventListener("click", function() {
+                        alert("Wrong Answer! Emile Schuffenecker did not paint 'Starry Night'.");
+                    });
+                </script>
+
+                <!-- TODO: Add multiple choice question here -->
+            </div>
+
+            <div class="section">
+                <h2>In what year was Vincent van Gogh born?</h2>
+                <hr>
+
+                <!-- Input field for user to enter data -->
+                <input type="text" id="userInput" placeholder="Enter something here">
+
+                <!-- Button to trigger action -->
+                <button id="submitButton">Submit</button>
+
+                <!-- Paragraph to display the result -->
+                <p id="displayText"></p>
+
+                <script>
+                    // JavaScript to handle button click and display user input
+                    document.getElementById("submitButton").addEventListener("click", function() {
+                        // Get the user input value
+                        var input = document.getElementById("userInput").value;
+
+                        // Check if the input is not empty
+                        if (input.trim() !== "") {
+                            // Check if the input is correct
+                            if (input == 1853) {
+                                document.getElementById("displayText").textContent = "Correct! Vincent van Gogh was born in " + input;
+                            } else {
+                                document.getElementById("displayText").textContent = "Incorrect. The correct answer is 1853, but you entered " + input;
+                            }
+                        } else {
+                            // If input is empty, ask the user to provide something
+                            document.getElementById("displayText").textContent = "Please enter a year!";
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
